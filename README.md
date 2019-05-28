@@ -1,4 +1,4 @@
-# CodeXpert Tron (TRX) TRC20 Platform
+# Srinjoy Chakravarty and Kin Kendall's Token Swap DAPP
 
 ------------------------
 
