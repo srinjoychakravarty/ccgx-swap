@@ -1,15 +1,13 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.4.23;
 
-interface token {
+contract CCGX
+{
     function transfer(address receiver, uint amount) external;
+    function balanceOf(address recipient) external returns (uint256);
 }
 
-/**
- * @title Ownable
- * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of "user permissions".
- */
-contract Ownable {
+contract Ownable 
+{
 
     address public owner;
 
@@ -53,35 +51,42 @@ contract Ownable {
     }
 }
 
-contract CCGX_Swap is Ownable {
-
-    token public tokenReward;
+contract CCGX_OTC_Trade_Desk is CCGX, Ownable
+{
+    CCGX public tokenReward;
     address addressOfTokenUsedAsReward;
-    trcToken TRC10_TOKENID = 1000292;
+    trcToken trc10_tokenid  = 1001830;
 
-    constructor() public {
+    constructor() public {}
 
-    }
-
-    function SwapToTRC10(address toAddress, uint256 tokenValue, trcToken id) payable public    {
+    function SwapToTRC10(address toAddress, uint256 tokenValue, trcToken id) payable public
+    {
         toAddress.transferToken(tokenValue, id);
     }
 
     function SwapToTRC20(address TRC20_Address) public payable returns(trcToken, uint256){
-        addressOfTokenUsedAsReward = TRC20_Address;
-        tokenReward = token(addressOfTokenUsedAsReward);
-        trcToken id = msg.tokenid;
-        uint256 value = msg.tokenvalue;
-        if (id == TRC10_TOKENID){
-            tokenReward.transfer(msg.sender, value * 100000000 / 10);
-        }
-        return (id, value);
+    addressOfTokenUsedAsReward = TRC20_Address;
+    tokenReward = CCGX(addressOfTokenUsedAsReward);
+    trcToken id = msg.tokenid;
+    uint256 value = msg.tokenvalue;
+    if (id == trc10_tokenid){
+    tokenReward.transfer(msg.sender, value * 100000000 / 10);
+    }
+    return (id, value);
     }
 
-    function getTRC10TokenBalance(trcToken id) public view returns (uint256){
+    function getTRC10TokenBalance(trcToken id) public view returns (uint256)
+    {
         return address(this).tokenBalance(id);
     }
 
+    function getTRC20TokenBalance(address TRC20_Address) external returns (uint256)
+    {
+    addressOfTokenUsedAsReward = TRC20_Address;
+    tokenReward = CCGX(addressOfTokenUsedAsReward);
+    uint256 balance = tokenReward.balanceOf(address(this));
+    return balance;
+    }
 
     // @dev Returns contract ETH balance
     function getBalance() public view returns (uint256)
@@ -92,20 +97,15 @@ contract CCGX_Swap is Ownable {
     // @dev Transfers TRX from contract to specified address
     function withdrawTRX(address _address, uint256 _amount) onlyOwner public returns (uint256)
     {
-        uint256 _value = _amount*(1 trx);
-
-        // to prevent spamming
-        require(_value > 1 trx, "Send at least 1 TRX");
-
         // transfer reward to account
-        _address.transfer(_value);
-
+        _address.transfer(_amount);
     }
 
     // @dev Transfers TRX from specified address to contract
-    function depositTRX() public payable onlyOwner returns (bool) {
-
+    function depositTRX() public payable onlyOwner returns (bool)
+    {
         return true;
     }
 
 }
+

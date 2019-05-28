@@ -115,7 +115,6 @@ class App extends React.Component {
         this.setState({
             address : Utils.tronWeb.address.fromHex((((await Utils.tronWeb.trx.getAccount()).address).toString())),
             TRC10contractbalance : parseFloat((await Utils.contract.getTRC10TokenBalance(TOKEN_ID).call()).toString()),
-            //TRC20contractbalance : parseFloat((await Utils.contract.getTRC20TokenBalance(TRC20_TOKEN_CONTRACT_ADDRESS).call()).toString())/1000000,
             TRXcontractbalance : parseFloat((await Utils.contract.getBalance().call()).toString())/1000000,
 
         });
@@ -128,7 +127,7 @@ class App extends React.Component {
     /////////////////////////////////////// SwapTRXTRC10 /////////////////////////////////
     async SwapTRXTRC10(_amount){
 
-        Utils.contract.SwapToTRC10(this.state.address, Utils.tronWeb.toSun(_amount/1000000), TOKEN_ID).send({
+        Utils.contract.SwapToTRC10(this.state.address, Utils.tronWeb.toSun(_amount), TOKEN_ID).send({
             shouldPollResponse: true,
             callValue: Utils.tronWeb.toSun(_amount)
         }).then(res => Swal({
@@ -193,7 +192,7 @@ class App extends React.Component {
                 <div className='col-lg-12 text-center' >
                   <hr/>
 
-                  <h2 style={{color : 'white' }}>CCGX OTC Desk</h2>
+                  <h2 style={{color : 'white' }}>CCGX Token Swap Platform</h2>
                   <br/>
                   <hr style={{color: 'white', backgroundColor: 'white', height: 0.5}}/>
                   <br/>
@@ -205,17 +204,17 @@ class App extends React.Component {
 
                   <br/>
                   <br/>
-                  <h4>Buy (CCGX) MicroHarvester Tokens 1:1 with Tron (TRX)</h4>
-                  <p style={{color: 'green'}}> <i> Current CCGX MicroHarvester (id: 1001830) supply available for OTC trade: {this.state.TRC10contractbalance} </i></p>
+                  <h4> Get TRC10 CCGX Tokens in exchange with TRX for 1:1 ratio </h4>
+                  <p> <i> Current TRC10 CCGX Supply in Smart Contract : {this.state.TRC10contractbalance} </i></p>
                   <br/>
-                  <p>Enter amount of CCGX MicroHarvester needed:</p>
+                  <p>Type number of tokens to exchange</p>
                   <input style={{ width:"200px" }} value={this.state.gettrxtrc10amount} onChange={this.updateTRC10Value}/>
                   <br/>
                   <br/>
                   <button className='btn btn-danger' onClick={(event) => {
                                                                        event.preventDefault()
                                                                        this.SwapTRXTRC10(this.state.gettrxtrc10amount)
-                                                                     }  }>Get CCGX
+                                                                     }  }>Swap TRX to TRC10
                   </button>
                   <br/>
                   <br/>
@@ -233,18 +232,18 @@ class App extends React.Component {
                   <br/>
                   <br/>
                   <h4>  </h4>
-                  <p> <i> Current Supply of CCGX Smart Token available OTC: {this.state.TRC20contractbalance} </i></p>
+                  <p> <i> Current TRC20 CCGX Supply in Smart Contract : {this.state.TRC20contractbalance} </i></p>
                   <br/>
-                  <h4>Harvest 1 CCGX Smart Token for 10 CCGX MicroHarvesters (new!)</h4>
+                  <h3>Use 10 CCGX MicroMine tokens per CCGX (new!) TRC20 you want to obtain.</h3>
                   <br/>
-                  <p>Enter amount of CCGX (TRC20) to harvest:</p>
+                  <p>Type number of CCGX TRC20 tokens to receive:</p>
                   <input style={{ width:"200px" }} value={this.state.gettrxtrc20amount} onChange={this.updateTRC20Value}/>
                   <br/>
                   <br/>
                   <button className='btn btn-danger' onClick={(event) => {
                                                                        event.preventDefault()
                                                                        this.SwapTRC10TRC20(this.state.gettrxtrc20amount)
-                                                                     }  }>Harvest CCGX (TRC20)
+                                                                     }  }>Swap TRC10 to TRC20
                   </button>
                   <br/>
                   <br/>

@@ -1,5 +1,5 @@
 {
-  "name": "tron-messageboard",
+  "name": "ccgx-token-swap",
   "version": "0.1.0",
   "homepage": "./",
   "private": true,
@@ -15,10 +15,12 @@
     "tronweb": "^2.0.30"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && npm run test",
     "build": "react-scripts build && npx rimraf docs && npx move-cli build docs",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "solium:lint:fix": "solium lint -d ./contracts --fix",
+    "solium:lint": "solium lint -d ./contracts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,7 +37,12 @@
     "babel-register": "^6.26.0",
     "move-cli": "^1.2.0",
     "rimraf": "^2.6.2",
-    "solc": "^0.4.25",
+    "solc": "^0.4.23",
     "solium": "^1.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tronbox compile && sudo npm run solium:lint:fix"
+    }
   }
 }
