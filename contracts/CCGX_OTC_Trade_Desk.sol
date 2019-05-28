@@ -6,7 +6,7 @@ contract CCGX
     function balanceOf(address recipient) external returns (uint256);
 }
 
-contract Ownable 
+contract Ownable
 {
 
     address public owner;
@@ -108,4 +108,3 @@ contract CCGX_OTC_Trade_Desk is CCGX, Ownable
     }
 
 }
-
