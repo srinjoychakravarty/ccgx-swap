@@ -8,7 +8,7 @@ import './App.scss';
 
 const FOUNDATION_ADDRESS = 'TWiWt5SEDzaEqS6kE5gandWMNfxR2B5xzg';
 const CONTRACT_ADDRESS = 'TWjXjizcZEj3Ditr6bGLJ9RiiFfTFHSSZL';
-const TRC20_TOKEN_CONTRACT_ADDRESS = 'TFxZmPoYMXHC9ubCAZb1arZNy9gvT8Mvde';
+const TRC20_TOKEN_CONTRACT_ADDRESS = 'TR1cMoNdgb9mMTwF54XVKiC2KXos6LqyRT';
 const TOKEN_ID = 1001830;
 class App extends React.Component {
 
