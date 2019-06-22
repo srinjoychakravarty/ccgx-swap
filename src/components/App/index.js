@@ -113,11 +113,10 @@ class App extends React.Component {
         await Utils.setTronWeb(window.tronWeb, CONTRACT_ADDRESS);
 
         this.setState({
-            address : Utils.tronWeb.address.fromHex((((await Utils.tronWeb.trx.getAccount()).address).toString())),
+            address : Utils.tronWeb.address.fromHex((String((await Utils.tronWeb.trx.getAccount()).address))),
             TRC10contractbalance : parseFloat((await Utils.contract.getTRC10TokenBalance(TOKEN_ID).call()).toString()),
             //TRC20contractbalance : parseFloat((await Utils.contract.getTRC20TokenBalance(TRC20_TOKEN_CONTRACT_ADDRESS).call()).toString())/1000000,
             TRXcontractbalance : parseFloat((await Utils.contract.getBalance().call()).toString())/1000000,
-
         });
 
         //await Utils.setTronWeb(window.tronWeb);
