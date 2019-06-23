@@ -115,7 +115,7 @@ class App extends React.Component {
         this.setState({
             address : Utils.tronWeb.address.fromHex((String((await Utils.tronWeb.trx.getAccount()).address))),
             TRC10contractbalance : parseFloat(String(await Utils.contract.getTRC10TokenBalance(TOKEN_ID).call())),
-            TRC20contractbalance : parseFloat((await Utils.contract.getTRC20TokenBalance(TRC20_TOKEN_CONTRACT_ADDRESS).call()).toString())/1000000,
+            //TRC20contractbalance : parseFloat((await Utils.contract.getTRC20TokenBalance(TRC20_TOKEN_CONTRACT_ADDRESS).call()).toString())/1000000,
             TRXcontractbalance : parseFloat((String(await Utils.contract.getBalance().call()))/1000000),
         });
 
