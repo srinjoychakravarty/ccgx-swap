@@ -51,11 +51,11 @@ contract Ownable
     }
 }
 
-contract CCGX_OTC_Trade_Desk is CCGX, Ownable
+contract CCGX_OTC_Trade_Desk is Ownable
 {
     CCGX public tokenReward;
     address addressOfTokenUsedAsReward;
-    trcToken trc10_tokenid  = 1002545;
+    trcToken trc10_tokenid  = 1001830;
 
     constructor() public {}
 

@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import './App.scss';
 
 const FOUNDATION_ADDRESS = 'TWiWt5SEDzaEqS6kE5gandWMNfxR2B5xzg';
-const CONTRACT_ADDRESS = 'TWjXjizcZEj3Ditr6bGLJ9RiiFfTFHSSZL';
+const CONTRACT_ADDRESS = 'TPmJWuPiGaGidddbsncrabrWM7d3b2i3Xz';
 const TRC20_TOKEN_CONTRACT_ADDRESS = 'TVjX5pL5LYWzvKtBNQtz2vF19EYR3qa5Vx';
 const TOKEN_ID = 1002545;
 class App extends React.Component {
