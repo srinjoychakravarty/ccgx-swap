@@ -205,7 +205,7 @@ class App extends React.Component {
                   <br/>
                   <br/>
                   <h4>Obtain MicroHarvest Tokens 1:1 with TRON (TRX)</h4>
-                  <h5><i>25% of proceed allocates to the CharityCompassionCoin initiative</i></h5>
+                  <h5><p style={{color: 'yellow'}}><i>25% of proceed allocates to the CharityCompassionCoin initiative</i></h5></p>
                   <p style={{color: 'green'}}> <i> Current MicroHarvest TRC10 (ID: 1000010) supply available for OTC Trade: {this.state.TRC10contractbalance} </i></p>
                   <br/>
                   <p>Enter amount of MicroHarvest token needed:</p>
