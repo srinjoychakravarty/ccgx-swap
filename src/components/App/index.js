@@ -233,7 +233,7 @@ class App extends React.Component {
                   <br/>
                   <br/>
                   <h4>  </h4>
-                  <p> <i> {this.state.TRC20contractbalance} </i></p>
+                  <p> <i> CCGX TRC20 Daily Seeding Protocol: 42,000 CCGX Cap Seeded Daily For Harvesting {this.state.TRC20contractbalance} </i></p>
                   <br/>
                   <h4>Harvest 1 CCGX SmartCoin (TRC20) with 10 MicroHarvest (TRC10) Tokens</h4>
                   <br/>
