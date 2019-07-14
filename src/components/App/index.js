@@ -7,9 +7,9 @@ import Swal from 'sweetalert2';
 import './App.scss';
 
 const FOUNDATION_ADDRESS = 'TWiWt5SEDzaEqS6kE5gandWMNfxR2B5xzg';
-const CONTRACT_ADDRESS = 'TPmJWuPiGaGidddbsncrabrWM7d3b2i3Xz';
+const CONTRACT_ADDRESS = 'TEH69yFp8KbYhLu6AjZBCr9seYSgvivRRL';
 const TRC20_TOKEN_CONTRACT_ADDRESS = 'TVjX5pL5LYWzvKtBNQtz2vF19EYR3qa5Vx';
-const TOKEN_ID = 1002545;
+const TOKEN_ID = 1000010;
 class App extends React.Component {
 
     constructor(props) {
@@ -204,17 +204,17 @@ class App extends React.Component {
 
                   <br/>
                   <br/>
-                  <h4>Buy (CCGX) MicroHarvester Tokens 1:1 with Tron (TRX)</h4>
-                  <p style={{color: 'green'}}> <i> Current CCGX MicroHarvester (id: 1002545) supply available for OTC trade: {this.state.TRC10contractbalance} </i></p>
+                  <h4>Buy (CCC) CryptoCompassionCharity Tokens 1:1 with Tron (TRX)</h4>
+                  <p style={{color: 'green'}}> <i> Current CCC TRC10 (id: 1000010) supply available for OTC trade: {this.state.TRC10contractbalance} </i></p>
                   <br/>
-                  <p>Enter amount of CCGX MicroHarvester needed:</p>
+                  <p>Enter amount of CCC TRC10 needed:</p>
                   <input style={{ width:"200px" }} value={this.state.gettrxtrc10amount} onChange={this.updateTRC10Value}/>
                   <br/>
                   <br/>
                   <button className='btn btn-danger' onClick={(event) => {
                                                                        event.preventDefault()
                                                                        this.SwapTRXTRC10(this.state.gettrxtrc10amount)
-                                                                     }  }>Get CCGX
+                                                                     }  }>Get CCC (TRC10)
                   </button>
                   <br/>
                   <br/>
@@ -232,18 +232,18 @@ class App extends React.Component {
                   <br/>
                   <br/>
                   <h4>  </h4>
-                  <p> <i> Current Supply of CCGX Smart Token available OTC: {this.state.TRC20contractbalance} </i></p>
+                  <p> <i> Current Supply of CCGX Smart Token (TRC20) available OTC: {this.state.TRC20contractbalance} </i></p>
                   <br/>
-                  <h4>Harvest 1 CCGX Smart Token for 10 CCGX MicroHarvesters (new!)</h4>
+                  <h4>Buy 1 CCGX Smart Token (TRC20) for 10 CCC TRC10s (new!)</h4>
                   <br/>
-                  <p>Enter amount of CCGX (TRC20) to harvest:</p>
+                  <p>Enter amount of CCGX (TRC20) to buy:</p>
                   <input style={{ width:"200px" }} value={this.state.gettrxtrc20amount} onChange={this.updateTRC20Value}/>
                   <br/>
                   <br/>
                   <button className='btn btn-danger' onClick={(event) => {
                                                                        event.preventDefault()
                                                                        this.SwapTRC10TRC20(this.state.gettrxtrc20amount)
-                                                                     }  }>Harvest CCGX (TRC20)
+                                                                     }  }>Get CCGX (TRC20)
                   </button>
                   <br/>
                   <br/>
