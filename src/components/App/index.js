@@ -233,7 +233,7 @@ class App extends React.Component {
                   <br/>
                   <br/>
                   <h4>  </h4>
-                  <p> <i> Current Supply of CCGX Smart Token (TRC20) available OTC: {this.state.TRC20contractbalance} </i></p>
+                  <p> <i> {this.state.TRC20contractbalance} </i></p>
                   <br/>
                   <h4>Harvest 1 CCGX SmartCoin (TRC20) with 10 MicroHarvest (TRC10) Tokens</h4>
                   <br/>
