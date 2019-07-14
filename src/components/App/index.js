@@ -8,8 +8,8 @@ import './App.scss';
 
 const FOUNDATION_ADDRESS = 'TWiWt5SEDzaEqS6kE5gandWMNfxR2B5xzg';
 const CONTRACT_ADDRESS = 'TWjXjizcZEj3Ditr6bGLJ9RiiFfTFHSSZL';
-const TRC20_TOKEN_CONTRACT_ADDRESS = 'TR1cMoNdgb9mMTwF54XVKiC2KXos6LqyRT';
-const TOKEN_ID = 1001830;
+const TRC20_TOKEN_CONTRACT_ADDRESS = 'TVjX5pL5LYWzvKtBNQtz2vF19EYR3qa5Vx';
+const TOKEN_ID = 1002545;
 class App extends React.Component {
 
     constructor(props) {
@@ -205,7 +205,7 @@ class App extends React.Component {
                   <br/>
                   <br/>
                   <h4>Buy (CCGX) MicroHarvester Tokens 1:1 with Tron (TRX)</h4>
-                  <p style={{color: 'green'}}> <i> Current CCGX MicroHarvester (id: 1001830) supply available for OTC trade: {this.state.TRC10contractbalance} </i></p>
+                  <p style={{color: 'green'}}> <i> Current CCGX MicroHarvester (id: 1002545) supply available for OTC trade: {this.state.TRC10contractbalance} </i></p>
                   <br/>
                   <p>Enter amount of CCGX MicroHarvester needed:</p>
                   <input style={{ width:"200px" }} value={this.state.gettrxtrc10amount} onChange={this.updateTRC10Value}/>
