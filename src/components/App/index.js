@@ -192,7 +192,7 @@ class App extends React.Component {
                 <div className='col-lg-12 text-center' >
                   <hr/>
 
-                  <h2 style={{color : 'white' }}>CCGX OTC Desk</h2>
+                  <h2 style={{color : 'white' }}>CCGX OTC Desk Harvester</h2>
                   <br/>
                   <hr style={{color: 'white', backgroundColor: 'white', height: 0.5}}/>
                   <br/>
@@ -204,10 +204,11 @@ class App extends React.Component {
 
                   <br/>
                   <br/>
-                  <h4>Buy (CCC) CryptoCompassionCharity Tokens 1:1 with Tron (TRX)</h4>
-                  <p style={{color: 'green'}}> <i> Current CCC TRC10 (id: 1000010) supply available for OTC trade: {this.state.TRC10contractbalance} </i></p>
+                  <h4>Obtain MicroHarvest Tokens 1:1 with TRON (TRX)</h4>
+                  <h5><i>25% of proceed allocates to the CharityCompassionCoin initiative</i></h5>
+                  <p style={{color: 'green'}}> <i> Current MicroHarvest TRC10 (ID: 1000010) supply available for OTC Trade: {this.state.TRC10contractbalance} </i></p>
                   <br/>
-                  <p>Enter amount of CCC TRC10 needed:</p>
+                  <p>Enter amount of MicroHarvest token needed:</p>
                   <input style={{ width:"200px" }} value={this.state.gettrxtrc10amount} onChange={this.updateTRC10Value}/>
                   <br/>
                   <br/>
@@ -234,16 +235,16 @@ class App extends React.Component {
                   <h4>  </h4>
                   <p> <i> Current Supply of CCGX Smart Token (TRC20) available OTC: {this.state.TRC20contractbalance} </i></p>
                   <br/>
-                  <h4>Buy 1 CCGX Smart Token (TRC20) for 10 CCC TRC10s (new!)</h4>
+                  <h4>Harvest 1 CCGX SmartCoin (TRC20) with 10 MicroHarvest (TRC10) Tokens</h4>
                   <br/>
-                  <p>Enter amount of CCGX (TRC20) to buy:</p>
+                  <p>Enter amount of CCGX (TRC20) to harvest:</p>
                   <input style={{ width:"200px" }} value={this.state.gettrxtrc20amount} onChange={this.updateTRC20Value}/>
                   <br/>
                   <br/>
                   <button className='btn btn-danger' onClick={(event) => {
                                                                        event.preventDefault()
                                                                        this.SwapTRC10TRC20(this.state.gettrxtrc20amount)
-                                                                     }  }>Get CCGX (TRC20)
+                                                                     }  }>Harvest CCGX (TRC20)
                   </button>
                   <br/>
                   <br/>
