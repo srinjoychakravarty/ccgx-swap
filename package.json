@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "husky": "^2.2.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-custom-scrollbars": "^4.2.1",
